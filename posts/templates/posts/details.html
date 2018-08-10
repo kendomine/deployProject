@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Kenneth Domine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'main_app/assets/css/main.css' %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="{% static 'main_app/assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon"><img class= "icon" src="{% static 'main_app/logo.png' %}"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Kenneth Domine</h1>
+								<p>Filipino-American born and raised in San Francisco, California. <br />
+								<b>Software Engineer</b>.Fitness Enthusiast.<b>90's R&B Connoisseur</b>.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="/#intro">Blog</a></li>
+								<li><a href="/#work">Portfolio</a></li>
+								<li><a class="nav-link js-scroll-trigger" href="{% static 'main_app/images/Resume.pdf' %}" target="_blank">Resume</a></li>
+								<li><a href="/#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+				<!-- Main -->
+					<div id="main">
+							<article id="post">
+								{% block content %}
+									<h3 class="center-align"> {{post.title}} </h3>
+										<div class="card">
+ 											<p> {{post.body}} </p>
+										</div>
+										<div class="card-action">
+											{{post.created_at}}
+										</div>
+										<div class="card-action">
+											<a href="/#intro" class="btn"> Go Back </a>
+										</div>
+								{% endblock %}
+							</article>
+					</div>
+				<!-- Footer -->
+					<footer id="footer">
+					</footer>
+			</div>
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{% static 'main_app/assets/js/jquery.min.js'%}"></script>
+			<script src="{% static 'main_app/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'main_app/assets/js/util.js' %}"></script>
+			<script src="{% static 'main_app/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
